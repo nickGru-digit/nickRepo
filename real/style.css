@@ -1,0 +1,73 @@
+body {
+    background: LightCyan;
+    margin: 0px;
+    font-family: Comic-sans, Arial, Helvetica, sans-serif;
+}
+
+div.header {
+    background: Turquoise;
+    border: darkTurquoise;
+    border-width: 5px;
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.footer {
+    background: Turquoise;
+    border: darkTurquoise;
+    border-width: 5px;
+    border-style: solid;
+    display: flex;
+    flex-direction: row;
+}
+
+section.box {
+    background: Turquoise;
+    border: darkTurquoise;
+    border-width: 5px;
+    border-style: solid;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom:20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+div.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    align-content: center;
+}
+
+div.side-by-side {
+    display: flex;
+}
+
+img {
+    width: 400%;
+    max-width: 600px;
+}
+
+img.smallTramp {
+    width:400%;
+    max-width: 300px;
+    padding: 150px;
+}
+
+img.bigTramp {
+    width: 400%;
+    max-width: 600px;
+}
+
+.featureBlock {
+    background-color:pink;
+    font-size: smaller;
+}

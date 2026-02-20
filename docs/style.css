@@ -15,8 +15,13 @@ img.house {
 }
 
 img.shark {
-    width:609%;
+    width:600%;
     max-width:500px;
+}
+
+img.bigPants {
+    width:350%;
+    max-width:1750px;
 }
 
 img {
