@@ -1,0 +1,34 @@
+body {
+
+    /*background:papayaWhip*/
+    background: LightSteelBlue;
+    font-family: Comic-sans, Arial, Helvetica, sans-serif;
+}
+
+div.side-by-side {
+    display: flex;
+}
+
+img.house {
+    width: 59%;
+    max-width: 50px;
+}
+
+img.shark {
+    width:600%;
+    max-width:500px;
+}
+
+img.bigPants {
+    width:350%;
+    max-width:1750px;
+}
+
+img {
+    width: 59%;
+    max-width: 500px;
+}
+.featureBlock {
+    background-color:pink;
+    font-size: smaller;
+}
