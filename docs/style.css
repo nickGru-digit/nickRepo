@@ -2,13 +2,14 @@ body {
     background: LightCyan;
     margin: 0px;
     font-family: Comic-sans, Arial, Helvetica, sans-serif;
+    color: rgb(0,50,100);
 }
 
 div.header {
-    background: Turquoise;
-    border: darkTurquoise;
+    background: rgb(100, 175, 200);
+    border: rgb(85, 135, 160);
     border-width: 5px;
-    border-style: solid;
+    border-style: dashed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,19 +17,21 @@ div.header {
 }
 
 div.footer {
-    background: Turquoise;
-    border: darkTurquoise;
+    background: rgb(100, 175, 200);
+    border: rgb(85, 135, 160);
     border-width: 5px;
-    border-style: solid;
+    border-style: dashed;
+    padding-left: 10px;
     display: flex;
     flex-direction: row;
 }
 
 section.box {
-    background: Turquoise;
-    border: darkTurquoise;
+    background: LightSkyBlue;
+    border: rgb(51, 153, 255);
     border-width: 5px;
-    border-style: solid;
+    border-style: dotted;
+    border-radius: 10px;
     width: 80%;
     margin: auto;
     margin-top: 20px;
