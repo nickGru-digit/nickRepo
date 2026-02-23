@@ -2,7 +2,11 @@ body {
     background: LightCyan;
     margin: 0px;
     font-family: Comic-sans, Arial, Helvetica, sans-serif;
-    color: rgb(0,50,100);
+    color: rgb(0, 50, 100);
+    background-image: url("images/skeleton (2).gif");
+    background-attachment: fixed;
+    background-size: 20%;
+    animation: scroll 100s linear infinite;
 }
 
 div.header {
@@ -35,7 +39,7 @@ section.box {
     width: 80%;
     margin: auto;
     margin-top: 20px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     padding: 10px;
     display: flex;
     justify-content: space-evenly;
@@ -46,12 +50,25 @@ div.center {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     align-content: center;
 }
 
 div.side-by-side {
     display: flex;
+}
+
+img.tramp {
+    width: 400%;
+    max-width: 300px;
+    padding: 150px;
+    border: none;
+}
+
+img.bigTramp {
+    width: 400%;
+    max-width: 600px;
+    border: none;
 }
 
 img {
@@ -65,22 +82,23 @@ img {
 
 figcaption {
     font-style: italic;
+    font-weight: 700;
+    text-align: center;
 }
 
-img.tramp {
-    width:400%;
-    max-width: 300px;
-    padding: 150px;
-    border: none;
+figure.display {
+    background: rgb(100, 175, 200);
+    border: rgb(51, 153, 255);
+    border-width: 5px;
+    border-style: dotted;
+    border-radius: 10px;
 }
 
-img.bigTramp {
-    width: 400%;
-    max-width: 600px;
-    border: none;
-}
-
-.featureBlock {
-    background-color:pink;
-    font-size: smaller;
+@keyframes scroll {
+    from {
+    background-position: 0 0;
+    }
+    to {
+    background-position : 100% 20%;
+    }
 }
