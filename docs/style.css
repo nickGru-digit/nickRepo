@@ -57,17 +57,27 @@ div.side-by-side {
 img {
     width: 400%;
     max-width: 600px;
+    border: rgb(51, 153, 255);
+    border-width: 5px;
+    border-style: dotted;
+    border-radius: 10px;
 }
 
-img.smallTramp {
+figcaption {
+    font-style: italic;
+}
+
+img.tramp {
     width:400%;
     max-width: 300px;
     padding: 150px;
+    border: none;
 }
 
 img.bigTramp {
     width: 400%;
     max-width: 600px;
+    border: none;
 }
 
 .featureBlock {
