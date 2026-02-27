@@ -7,6 +7,7 @@ body {
     background-attachment: fixed;
     background-size: 20%;
     animation: scroll 100s linear infinite;
+    animation: cursor 0.6s linear infinite;
 }
 
 div.header {
@@ -60,15 +61,16 @@ div.side-by-side {
 
 img.tramp {
     width: 400%;
-    max-width: 300px;
+    max-width: 600px;
     padding: 150px;
     border: none;
 }
 
-img.bigTramp {
+#jumping {
     width: 400%;
     max-width: 600px;
     border: none;
+    transition: transform 0.3s ease;
 }
 
 img {
@@ -100,5 +102,24 @@ figure.display {
     }
     to {
     background-position : 100% 20%;
+    }
+}
+
+@keyframes cursor
+{
+    0% {
+        cursor: url("images/cursor1.png"), auto;
+    }
+    25% {
+        cursor: url("images/cursor2.png"), auto;
+    }
+    50% {
+        cursor: url("images/cursor3.png"), auto;
+    }
+    75% {
+        cursor: url("images/cursor4.png"), auto;
+    }
+    100% {
+        cursor: url("images/cursor5.png"), auto;
     }
 }
