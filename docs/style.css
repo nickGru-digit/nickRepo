@@ -6,8 +6,7 @@ body {
     background-image: url("images/skeleton (2).gif");
     background-attachment: fixed;
     background-size: 20%;
-    animation: scroll 100s linear infinite;
-    animation: cursor 0.6s linear infinite;
+    animation: scroll 100s linear infinite, cursor 0.75s linear infinite;
 }
 
 div.header {
@@ -33,6 +32,7 @@ div.footer {
 
 section.box {
     background: LightSkyBlue;
+    background: url("images/sparkle.gif");
     border: rgb(51, 153, 255);
     border-width: 5px;
     border-style: dotted;
