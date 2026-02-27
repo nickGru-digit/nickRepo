@@ -31,7 +31,6 @@ div.footer {
 }
 
 section.box {
-    background: LightSkyBlue;
     background: url("images/sparkle.gif");
     border: rgb(51, 153, 255);
     border-width: 5px;
@@ -55,15 +54,8 @@ div.center {
     align-content: center;
 }
 
-div.side-by-side {
-    display: flex;
-}
-
-img.tramp {
-    width: 400%;
-    max-width: 600px;
-    padding: 150px;
-    border: none;
+a:hover {
+    animation: pointer 0.75s linear infinite;
 }
 
 #jumping {
@@ -71,6 +63,13 @@ img.tramp {
     max-width: 600px;
     border: none;
     transition: transform 0.3s ease;
+}
+
+img.tramp {
+    width: 400%;
+    max-width: 600px;
+    padding: 150px;
+    border: none;
 }
 
 img {
@@ -82,18 +81,18 @@ img {
     border-radius: 10px;
 }
 
-figcaption {
-    font-style: italic;
-    font-weight: 700;
-    text-align: center;
-}
-
 figure.display {
-    background: rgb(100, 175, 200);
+    background: url("images/sparkle.gif");
     border: rgb(51, 153, 255);
     border-width: 5px;
     border-style: dotted;
     border-radius: 10px;
+}
+
+figcaption {
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
 }
 
 @keyframes scroll {
@@ -121,5 +120,24 @@ figure.display {
     }
     100% {
         cursor: url("images/cursor5.png"), auto;
+    }
+}
+
+@keyframes pointer
+{
+    0% {
+        cursor: url("images/pointer1.png"), auto;
+    }
+    25% {
+        cursor: url("images/pointer2.png"), auto;
+    }
+    50% {
+        cursor: url("images/pointer3.png"), auto;
+    }
+    75% {
+        cursor: url("images/pointer4.png"), auto;
+    }
+    100% {
+        cursor: url("images/pointer5.png"), auto;
     }
 }
