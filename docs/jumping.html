@@ -28,14 +28,17 @@
             </div>
         </footer>
         <script>
+            var jumping = false;
             function jump() {
                 trampoline = document.getElementById("jumping");
-                if (trampoline.style.transform !== "scale(0.25)") 
-                { trampoline.style.transform = "scale(0.25)";
-                    trampoline.style.transition = "transform 0.75s ease";
-                    setTimeout(() => {
-                    trampoline.style.transform = "scale(1)";
-                    }, 700);
+                trampoline.style.transition = "transform 1.25s ease";
+                if (jumping == false) 
+                { 
+                    jumping = true;
+                    trampoline.style.transform = "scale(1.5)";
+                    setTimeout(() => {trampoline.style.transform = "scale(0.25)";}, 400);
+                    setTimeout(() => {trampoline.style.transform = "scale(1)";}, 1700);
+                    setTimeout(() => {jumping = false;}, 2500);
                 }
             }
         </script>
