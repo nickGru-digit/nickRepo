@@ -55,17 +55,17 @@ div.center {
 }
 
 .cursor,
-.circle {
-    position: absolute;
+.sword {
+    position: fixed;
     width: 36px;
     height: 36px;
     background: url("images/backupCursor.png");
-    
-    opacity: 0.5;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
+    opacity: 0.25;
+    transition: opacity 0.25s ease, transform 0.15s ease;
 }
 
-.circle.fade {
+.sword.fade {
     opacity: 0;
     transform: scale(0.25);
 }
