@@ -54,13 +54,14 @@ div.center {
     align-content: center;
 }
 
-.cursor,
+.cursor{
+    
+}
 .sword {
-    position: fixed;
+    position: absolute;
     width: 36px;
     height: 36px;
     background: url("images/backupCursor.png");
-    pointer-events: none;
     opacity: 0.25;
     transition: opacity 0.25s ease, transform 0.15s ease;
 }
