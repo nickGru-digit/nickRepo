@@ -42,11 +42,10 @@ div.header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: scroll 50s linear infinite;
 }
 
 div.footer {
-    background: rgb(100, 175, 200);
+    background: url("images/fire.gif");
     border: rgb(85, 135, 160);
     border-width: 5px;
     border-style: dashed;
@@ -122,8 +121,7 @@ img {
 
 figure.display {
     background: url("images/sparkle.gif");
-    max-width: 55%;
-    max-height: 5%;
+    max-width: 50%;
     border: rgb(51, 153, 255);
     border-width: 5px;
     border-style: dotted;
@@ -137,7 +135,11 @@ figcaption {
 }
 
 iframe.video {
-    width: 98.5%;
+    width: calc(50vw - 16px);
+    border: rgb(51, 153, 255);
+    border-width: 5px;
+    border-style: dotted;
+    border-radius: 10px;
     height: 24.93vw;
 }
 
