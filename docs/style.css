@@ -1,7 +1,17 @@
 body {
     background: LightCyan;
     margin: 0px;
-    font-family: Comic-sans, Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: -1px -1px 0 DarkRed,
+                1px -1px 0 LightCyan,
+                -1px 1px 0 LightCyan,
+                1px 1px 0 LightCyan,
+                -1.5px 0px 0 LightCyan,
+                1.5px 0px 0 LightCyan,
+                0px -1.5px 0 LightCyan,
+                0px 1.5px 0 LightCyan;
     color: rgb(0, 50, 100);
     background-image: url("images/skeleton (2).gif");
     background-attachment: fixed;
@@ -9,8 +19,22 @@ body {
     animation: scroll 100s linear infinite, cursor 0.75s linear infinite;
 }
 
+.bigText
+{
+    font-size: 48px;
+    font-weight: 900;
+    text-shadow: -2px -2px 0 DarkRed,
+                2px -2px 0 LightCyan,
+                -2px 2px 0 LightCyan,
+                2px 2px 0 LightCyan,
+                -3px 0px 0 LightCyan,
+                3px 0px 0 LightCyan,
+                0px -3px 0 LightCyan,
+                0px 3px 0 LightCyan;
+}
+
 div.header {
-    background: rgb(100, 175, 200);
+    background: url("images/fire.gif");
     border: rgb(85, 135, 160);
     border-width: 5px;
     border-style: dashed;
@@ -18,6 +42,7 @@ div.header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    animation: scroll 50s linear infinite;
 }
 
 div.footer {
@@ -97,7 +122,8 @@ img {
 
 figure.display {
     background: url("images/sparkle.gif");
-    width: 45%;
+    max-width: 55%;
+    max-height: 5%;
     border: rgb(51, 153, 255);
     border-width: 5px;
     border-style: dotted;
