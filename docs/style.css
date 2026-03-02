@@ -64,12 +64,11 @@ div.center {
     opacity: 0.25;
     transition: opacity 0.25s ease, transform 0.15s ease;
 } 
- */
-
 .sword.fade {
     opacity: 0;
     transform: scale(0.25);
 }
+*/
 
 a:hover {
     animation: pointer 0.75s linear infinite;
@@ -114,6 +113,7 @@ figcaption {
 iframe.video {
     width: 98.5%;
     height: 24.93vw;
+}
 
 @keyframes scroll {
     from {
