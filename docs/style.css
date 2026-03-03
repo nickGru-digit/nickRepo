@@ -23,6 +23,7 @@ body {
 {
     font-size: 48px;
     font-weight: 900;
+    letter-spacing: 0.05em;
     text-shadow: -2px -2px 0 DarkRed,
                 2px -2px 0 LightCyan,
                 -2px 2px 0 LightCyan,
@@ -34,7 +35,7 @@ body {
 }
 
 div.header {
-    background: url("images/fire.gif");
+    background: rgb(100, 175, 200, 0.8);
     border: rgb(85, 135, 160);
     border-width: 5px;
     border-style: dashed;
@@ -45,13 +46,45 @@ div.header {
 }
 
 div.footer {
-    background: url("images/fire.gif");
+    background: rgb(100, 175, 200, 0.8);
     border: rgb(85, 135, 160);
     border-width: 5px;
     border-style: dashed;
     padding-left: 10px;
     display: flex;
     flex-direction: row;
+}
+
+ul.navbar {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    justify-content: space-around;
+}
+
+ul.navbar li {
+    padding: 10px 10px;
+    margin: 10px 20px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 28px;
+    letter-spacing: 0.2em;
+    background-color: rgb(32, 32, 32, 0.2);
+    border-radius: 25px;
+    border: rgb(16, 16, 16, 0.2);
+    border-style: groove;
+    border-width: 5px;
+}
+
+ul.navbar li a:hover {
+    color: green;
+    padding: 10px 0px;
+    font-weight: 1000;
+    letter-spacing: 0.3em;
+}
+
+a {
+    text-decoration: none;
 }
 
 section.box {
@@ -103,6 +136,12 @@ a:hover {
     width: 400%;
     max-width: 600px;
     border: none;
+}
+
+img.fire {
+    width: 50px;
+    border: none;
+    height: 50px;
 }
 
 img.tramp {
