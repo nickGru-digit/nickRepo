@@ -104,12 +104,20 @@ section.box {
     box-shadow: 0 5px 20px black
 }
 
+.rowbox {
+    background: url("images/sparkle.gif");
+    width: 80%;
+    margin: auto;
+    margin: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
 div.center {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    align-content: center;
     text-align: center;
 }
 
@@ -149,6 +157,13 @@ img.tramp {
     width: 45%;
     padding: 150px;
     border: none;
+}
+
+img.corpus {
+    width: 35%;
+    margin: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 img {
