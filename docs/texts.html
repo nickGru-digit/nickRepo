@@ -36,33 +36,14 @@
                 </li>
             </ul>
         </div>
-        <div class="center">
-            <img id="jumping" onclick="jump()" src="images/jumping.png"
-                alt="topdown photo of a trampoline from far away" />
-            <p>
-                <a href="whimsy.html">Stop having fun</a>
-            </p>
-        </div>
+        <section class="box">
+            <h2>Corpus</h2>
+            <img src="images/bagel.jpg" alt="bagel"/>
+        </section>
         <footer>
             <div class="footer">
                 <p>© 2025 Nicky G, Shmorple Inc.</p>
             </div>
         </footer>
-        <script>
-            var jumping = false;
-            function jump() {
-                trampoline = document.getElementById("jumping");
-                trampoline.style.transition = "transform 1.25s ease";
-                if (jumping == false) 
-                { 
-                    jumping = true;
-                    trampoline.style.transform = "scale(1.5)";
-                    setTimeout(() => {trampoline.style.transform = "scale(0.25)";}, 400);
-                    setTimeout(() => {trampoline.style.transform = "scale(1)";}, 1700);
-                    setTimeout(() => {jumping = false;}, 2500);
-                }
-            }
-        </script>
-        <script src ="script.js"></script>
     </body>
 </html>
