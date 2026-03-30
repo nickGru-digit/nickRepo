@@ -107,10 +107,10 @@ section.box {
 .rowbox {
     background: url("images/sparkle.gif");
     width: 80%;
-    margin: auto;
-    margin: 30px;
+    margin: 1.5%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     flex-direction: row;
 }
 
@@ -161,7 +161,7 @@ img.tramp {
 
 img.corpus {
     width: 35%;
-    margin: 1em;
+    margin: 2%;
     margin-top: 0;
     margin-bottom: 0;
 }
