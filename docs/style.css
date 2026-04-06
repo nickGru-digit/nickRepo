@@ -43,6 +43,7 @@ div.header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 div.footer {
@@ -57,9 +58,10 @@ div.footer {
 
 ul.navbar {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     list-style-type: none;
     margin: 0;
-    justify-content: space-around;
 }
 
 ul.navbar li {
@@ -74,13 +76,21 @@ ul.navbar li {
     border: rgb(16, 16, 16, 0.2);
     border-style: groove;
     border-width: 5px;
+    flex: 1 1 50px;
+    text-align: center;
+}
+
+ul.navbar li a {
+    transition: 0.2s ease-in-out;
 }
 
 ul.navbar li a:hover {
     color: green;
-    padding: 10px 0px;
+    padding: 10px 20px;
     font-weight: 1000;
-    letter-spacing: 0.3em;
+    letter-spacing: 0.5em;
+    transition: 0.4s ease-in-out;
+    font-size: 24px;
 }
 
 a {
