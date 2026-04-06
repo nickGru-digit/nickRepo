@@ -176,7 +176,7 @@ img {
 
 figure.display {
     background: url("images/sparkle.gif");
-    max-width: 60%;
+    width: 60%;
     border: rgb(51, 153, 255);
     border-width: 5px;
     border-style: dotted;
