@@ -175,12 +175,12 @@ img.corpus {
     margin-top: 0;
     margin-bottom: 0;
     transition: 0.2s linear;
+    box-shadow: 0 5px 5px black
 }
 
 img.corpus:hover {
     transform: scale(2.25);
     transition: 0.3s linear;
-    border: transparent 5px solid;
     box-shadow: 0 5px 20px black
 }
 
