@@ -16,7 +16,7 @@ body {
     background-image: url("images/skeleton (2).gif");
     background-attachment: fixed;
     background-size: 20%;
-    animation: scroll 100s linear infinite, cursor 0.75s linear infinite;
+    animation: scroll 100s linear infinite, cursor 0.75s linear infinite, lock 2.9s forwards;
 }
 
 .bigText
@@ -135,7 +135,7 @@ div.center {
     text-align: center;
 }
 
-/* 
+ /*
 .cursor,
 .sword {
     position: absolute;
@@ -145,11 +145,39 @@ div.center {
     opacity: 0.25;
     transition: opacity 0.25s ease, transform 0.15s ease;
 } 
+*/
+
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/bubbles.gif");
+    background-size: cover;
+    background-position: center;
+    z-index: 9999;
+    animation: disappear 1s ease-in-out 2s forwards;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("images/loading.gif");
+    background-size: cover;
+    background-position: center;
+    z-index: 9998;
+    animation: disappear 0s ease-in-out 2.9s forwards;
+}
+
 .sword.fade {
     opacity: 0;
     transform: scale(0.25);
 }
-*/
+
 
 #jumping {
     width: 400%;
@@ -217,6 +245,12 @@ iframe.video {
     height: 29.91vw;
 }
 
+@keyframes lock {
+    0% {overflow: hidden;}
+    99% {overflow: hidden;}
+    100% {overflow: auto;}
+}
+
 @keyframes scroll {
     from {
     background-position: 0 0;
@@ -224,6 +258,14 @@ iframe.video {
     to {
     background-position : 100% 20%;
     }
+}
+
+@keyframes disappear
+{
+   to {
+       opacity: 0;
+       visibility: hidden;
+   }
 }
 
 @keyframes cursor
