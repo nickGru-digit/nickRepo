@@ -176,8 +176,8 @@ div.center {
 .loadBar {
     position: fixed;
     top: 48vh;
-    left: 45vw;
-    width: 10vw;
+    left: calc(50vw - 125px);
+    width: 250px;
     height: 4vh;
     background-image: url("images/bar.gif");
     background-size: cover;
