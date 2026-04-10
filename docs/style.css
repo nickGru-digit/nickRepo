@@ -156,7 +156,7 @@ div.center {
     background-image: url("images/bubbles.gif");
     background-size: cover;
     background-position: center;
-    z-index: 9999;
+    z-index: 9998;
     animation: disappear 1s ease-in-out 2s forwards;
 }
 
@@ -169,8 +169,23 @@ div.center {
     background-image: url("images/loading.gif");
     background-size: cover;
     background-position: center;
-    z-index: 9998;
+    z-index: 9997;
     animation: disappear 0s ease-in-out 2.9s forwards;
+}
+
+.loadBar {
+    position: fixed;
+    top: 48vh;
+    left: 45vw;
+    width: 10vw;
+    height: 4vh;
+    background-image: url("images/bar.gif");
+    background-size: cover;
+    background-position: center;
+    z-index: 9999;
+    animation: disappear 0s ease-in-out 2.25s forwards;
+    box-shadow: 0 5px 20px black
+    
 }
 
 .sword.fade {
