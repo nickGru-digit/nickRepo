@@ -32,6 +32,7 @@ body {
                 3px 0px 0 LightCyan,
                 0px -3px 0 LightCyan,
                 0px 3px 0 LightCyan;
+    animation: rotate 10s infinite;
 }
 
 div.header {
@@ -183,7 +184,7 @@ div.center {
     background-size: cover;
     background-position: center;
     z-index: 9999;
-    animation: disappear 0s ease-in-out 2.25s forwards;
+    animation: disappear 0s ease-in-out 2.225s forwards;
     box-shadow: 0 5px 20px black
     
 }
@@ -281,6 +282,26 @@ iframe.video {
        opacity: 0;
        visibility: hidden;
    }
+}
+
+@keyframes rotate
+{
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(1deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-1deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+    
 }
 
 @keyframes cursor
