@@ -30,3 +30,14 @@
 //        }, 250);
 //    }
 //}, 20);
+const fireSound = new Audio("images/fire.mp3");
+const bubbleSound = new Audio("images/bubbles.mp3");
+
+document.addEventListener('click', () => {
+    fireSound.currentTime = 0;
+    fireSound.play();
+});
+
+window.onload = function() {
+    bubbleSound.play()
+}
