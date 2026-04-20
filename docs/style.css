@@ -181,6 +181,7 @@ div.center {
 .screen {
     background-image: url("images/grid.png");
     background-repeat: repeat;
+    opacity: 0.35;
 }
 .bezel {
     background-image: url("images/bezel.png");
