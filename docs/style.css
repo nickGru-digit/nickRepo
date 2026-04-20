@@ -16,7 +16,7 @@ body {
     background-image: url("images/skeleton (2).gif");
     background-attachment: fixed;
     background-size: 20%;
-    animation: scroll 100s linear infinite, cursor 0.75s linear infinite, lock 2.9s forwards;
+    animation: scroll 100s linear infinite, cursor 0.75s linear infinite, lock 2.5s forwards;
 }
 
 .bigText
@@ -148,30 +148,21 @@ div.center {
 } 
 */
 
-.bubbles {
-    position: fixed;
+.bubbles, .loading, .screen, .bezel, .glow, .scan-bar {
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: url("images/bubbles.gif");
-    background-size: cover;
+    position: fixed;
     background-position: center;
-    z-index: 9998;
-    animation: disappear 1s ease-in-out 2s forwards;
+    pointer-events: none;
 }
 
 .loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-image: url("images/loading.gif");
+    background-image: url("images/bubbles.gif"), url("images/loading.gif");
+    animation: disappear 0s ease-in-out 2.5s forwards;
     background-size: cover;
-    background-position: center;
-    z-index: 9997;
-    animation: disappear 0s ease-in-out 2.9s forwards;
+    pointer-events: auto;
 }
 
 .loadBar {
@@ -183,17 +174,46 @@ div.center {
     background-image: url("images/bar.gif");
     background-size: cover;
     background-position: center;
-    z-index: 9999;
     animation: disappear 0s ease-in-out 2.225s forwards;
-    box-shadow: 0 5px 20px black
-    
+    box-shadow: 0 5px 20px black   
 }
 
+.screen {
+    background-image: url("images/grid.png");
+    background-repeat: repeat;
+}
+.bezel {
+    background-image: url("images/bezel.png");
+    background-size: cover;
+}
+.glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(transparent 80%, black), radial-gradient(rgba(255, 255, 255, 0.4), transparent);
+    background-size: cover;
+    background-position: center;
+}
+
+.scan-bar {
+    animation: scan 9s infinite;
+}
+
+.scan {
+    height: 150px;
+    pointer-events: none;
+    width: 100%;
+    background-image: radial-gradient(rgba(130, 130, 150, 0.8), transparent 70%);
+}
+
+/*
 .sword.fade {
     opacity: 0;
     transform: scale(0.25);
 }
-
+*/
 
 #jumping {
     width: 400%;
@@ -261,6 +281,20 @@ iframe.video {
     height: 29.91vw;
 }
 
+@keyframes scan {
+    0% {
+        transform: translateY(0%);
+    }
+    33% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
 @keyframes lock {
     0% {overflow: hidden;}
     99% {overflow: hidden;}
@@ -307,37 +341,37 @@ iframe.video {
 @keyframes cursor
 {
     0% {
-        cursor: url("images/cursor1.png"), auto;
+        cursor: url("images/cursor1.png"), url("images/backupCursor.png"), auto;
     }
     25% {
-        cursor: url("images/cursor2.png"), auto;
+        cursor: url("images/cursor2.png"), url("images/backupCursor.png"), auto;
     }
     50% {
-        cursor: url("images/cursor3.png"), auto;
+        cursor: url("images/cursor3.png"), url("images/backupCursor.png"), auto;
     }
     75% {
-        cursor: url("images/cursor4.png"), auto;
+        cursor: url("images/cursor4.png"), url("images/backupCursor.png"), auto;
     }
     100% {
-        cursor: url("images/cursor5.png"), auto;
+        cursor: url("images/cursor5.png"), url("images/backupCursor.png"), auto;
     }
 }
 
 @keyframes pointer
 {
     0% {
-        cursor: url("images/pointer1.png"), auto;
+        cursor: url("images/pointer1.png"), url("images/backupPointer.png"), auto;
     }
     25% {
-        cursor: url("images/pointer2.png"), auto;
+        cursor: url("images/pointer2.png"), url("images/backupPointer.png"), auto;
     }
     50% {
-        cursor: url("images/pointer3.png"), auto;
+        cursor: url("images/pointer3.png"), url("images/backupPointer.png"), auto;
     }
     75% {
-        cursor: url("images/pointer4.png"), auto;
+        cursor: url("images/pointer4.png"), url("images/backupPointer.png"), auto;
     }
     100% {
-        cursor: url("images/pointer5.png"), auto;
+        cursor: url("images/pointer5.png"), url("images/backupPointer.png"), auto;
     }
 }
