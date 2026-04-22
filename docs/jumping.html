@@ -40,6 +40,7 @@
             </p>
         </div>
         <div>
+            <div id="popup" onclick="freakout()"></div>
             <div class="loading"></div>
             <div class="bubbles"></div>
             <div class="loadBar"></div>
@@ -56,23 +57,6 @@
                 <p>© 2025 Nicky G, Shmorple Inc.</p>
             </div>
         </footer>
-        <script>
-            var jumping = false;
-            const boingSound = new Audio("images/boing.mp3");
-            function jump() {
-                trampoline = document.getElementById("jumping");
-                trampoline.style.transition = "transform 1.25s ease";
-                if (jumping == false) 
-                { 
-                    jumping = true;
-                    boingSound.play();
-                    trampoline.style.transform = "scale(1.5)";
-                    setTimeout(() => {trampoline.style.transform = "scale(0.25)";}, 400);
-                    setTimeout(() => {trampoline.style.transform = "scale(1)";}, 1700);
-                    setTimeout(() => {jumping = false;}, 2500);
-                }
-            }
-        </script>
         <script src ="script.js"></script>
     </body>
 </html>

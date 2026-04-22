@@ -158,9 +158,22 @@ div.center {
     pointer-events: none;
 }
 
+#popup {
+    width: 150vw;
+    height: 150vh;
+    top: calc(0px - 25vh);
+    left: calc(0px - 25vw);
+    position: fixed;
+    background-position: center;
+    background-image: url("images/popup.png");
+    opacity: 0;
+    pointer-events: none;
+    animation: popup 45s 30s infinite;
+}
+
 .loading {
     background-image: url("images/bubbles.gif"), url("images/loading.gif");
-    animation: disappear 0s ease-in-out 2.5s forwards;
+    animation: disappear 0s 2.5s forwards;
     background-size: cover;
     pointer-events: auto;
 }
@@ -174,7 +187,7 @@ div.center {
     background-image: url("images/bar.gif");
     background-size: cover;
     background-position: center;
-    animation: disappear 0s ease-in-out 2.225s forwards;
+    animation: disappear 0s 2.225s forwards;
     box-shadow: 0 5px 20px black   
 }
 
@@ -311,10 +324,18 @@ iframe.video {
     }
 }
 
+@keyframes popup
+{
+    0% {opacity: 1; pointer-events: auto;}
+    9.99% {opacity: 1; pointer-events: auto;}
+    10% {opacity: 0; pointer-events: none;}
+    99.99% {opacity: 0; pointer-events: none;}
+    100% {opacity: 1; pointer-events: auto;}
+}
+
 @keyframes disappear
 {
    to {
-       opacity: 0;
        visibility: hidden;
    }
 }
