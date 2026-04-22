@@ -40,10 +40,4 @@ document.addEventListener('click', () => {
 
 window.onload = function() {
     bubbleSound.play()
-    navigator.serviceWorker.ready.then(registration => {
-        registration.showNotification('Hello World!', {
-            body: 'This is a test notification.',
-            icon: 'images/shark.jpg'
-        });
-    });
 }
