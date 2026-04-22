@@ -30,12 +30,12 @@
 //        }, 250);
 //    }
 //}, 20);
-const fireSound = new Audio("images/fire.mp3");
-const bubbleSound = new Audio("images/bubbles.mp3");
-
 window.onload = function() {
     bubbleSound.play()
 }
+
+const fireSound = new Audio("images/fire.mp3");
+const bubbleSound = new Audio("images/bubbles.mp3");
 
 var jumping = false;
 const boingSound = new Audio("images/boing.mp3");
