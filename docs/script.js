@@ -118,8 +118,10 @@ document.getElementById("playBtn").addEventListener("click", () => {
     }
 
     if (videoId) {
-        player.loadVideoById(videoId);
-        player.playVideo();
+        player.cueVideoById(videoId);
+        setTimeout(() => {
+            player.playVideo();
+        }, 100);
     } else {
         alert("Invalid YouTube URL");
     }
