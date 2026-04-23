@@ -113,6 +113,7 @@ document.getElementById("playBtn").addEventListener("click", () => {
 
     if (videoId && isReady) {
         player.loadVideoById(videoId);
+        alert("Video loaded");        
     }   
     else {
         alert("Invalid YouTube URL");
