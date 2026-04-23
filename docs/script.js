@@ -89,7 +89,6 @@ document.addEventListener('click', () => {
 let player;
 let isReady = false;
 
-// This MUST be global
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '1',
@@ -112,17 +111,10 @@ document.getElementById("playBtn").addEventListener("click", () => {
     const url = document.getElementById("ytInput").value;
     const videoId = getVideoId(url);
 
-    if (!isReady) {
-        alert("Player not ready yet—wait a second and try again.");
-        return;
-    }
-
-    if (videoId) {
-        player.cueVideoById(videoId);
-        setTimeout(() => {
-            player.playVideo();
-        }, 100);
-    } else {
+    if (videoId && isReady) {
+        player.loadVideoById(videoId);
+    }   
+    else {
         alert("Invalid YouTube URL");
     }
 });
