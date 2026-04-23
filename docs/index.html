@@ -42,8 +42,10 @@
             <p>Also, if you're interested, you can paste any YouTube link below and it (should) let you
                 play it as an audio track across each webpage. I just felt the dancing skeletons
                 needed something to dance to. Enjoy!</p>
-            <input type="text" id="ytInput" placeholder="Paste Youtube link here!">
-            <button onclick="loadVideo()">Play</button>
+            <input type="text" id="ytInput" placeholder="Paste YouTube link">
+            <button id="playBtn">Play</button>
+            
+            <div id="player"></div>
         </section>
         <section class="box">
             <h2>Resume</h2>
@@ -153,7 +155,7 @@
                 <p>© 2025 Nicky G, Shmorple Inc.</p>
             </div>
         </footer>
-        <script src="script.js"></script>
         <script src="https://www.youtube.com/iframe_api"></script>
+        <script src="script.js"></script>
     </body>
 </html>

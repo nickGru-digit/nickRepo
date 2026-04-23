@@ -87,31 +87,40 @@ document.addEventListener('click', () => {
 });
 
 let player;
+let isReady = false;
 
+// This MUST be global
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        height: '0',   // hide video if you want audio-only feel
-        width: '0',
+        height: '1',
+        width: '1',
         videoId: '',
-        playerVars: {
-            autoplay: 0,
-            controls: 0
+        events: {
+            'onReady': () => {
+                isReady = true;
+            }
         }
     });
 }
 
 function getVideoId(url) {
-    let match = url.match(/(?:v=|youtu\.be\/)([^&]+)/);
+    const match = url.match(/(?:v=|youtu\.be\/)([^&]+)/);
     return match ? match[1] : null;
 }
 
-function loadVideo() {
-    let url = document.getElementById("ytInput").value;
-    let videoId = getVideoId(url);
+document.getElementById("playBtn").addEventListener("click", () => {
+    const url = document.getElementById("ytInput").value;
+    const videoId = getVideoId(url);
 
-    if (videoId && player) {
+    if (!isReady) {
+        alert("Player not ready yet—wait a second and try again.");
+        return;
+    }
+
+    if (videoId) {
         player.loadVideoById(videoId);
+        player.playVideo();
     } else {
         alert("Invalid YouTube URL");
     }
-}
+});
