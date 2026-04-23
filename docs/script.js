@@ -66,7 +66,7 @@ function freakout() {
     errorSound.play();
     
     popup.style.animationPlayState = "paused";
-    delay -= 0.5;
+    delay -= 1.5;
     popup.style.animationDelay = `${delay}s`;
     popup.style.animationPlayState = "running";
     
@@ -85,3 +85,33 @@ document.addEventListener('click', () => {
         fireSound.play();
     }
 });
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '0',   // hide video if you want audio-only feel
+        width: '0',
+        videoId: '',
+        playerVars: {
+            autoplay: 0,
+            controls: 0
+        }
+    });
+}
+
+function getVideoId(url) {
+    let match = url.match(/(?:v=|youtu\.be\/)([^&]+)/);
+    return match ? match[1] : null;
+}
+
+function loadVideo() {
+    let url = document.getElementById("ytInput").value;
+    let videoId = getVideoId(url);
+
+    if (videoId && player) {
+        player.loadVideoById(videoId);
+    } else {
+        alert("Invalid YouTube URL");
+    }
+}

@@ -327,8 +327,8 @@ iframe.video {
 @keyframes popup
 {
     0% {opacity: 1; pointer-events: auto;}
-    9.99% {opacity: 1; pointer-events: auto;}
-    10% {opacity: 0; pointer-events: none;}
+    19.99% {opacity: 1; pointer-events: auto;}
+    20% {opacity: 0; pointer-events: none;}
     99.99% {opacity: 0; pointer-events: none;}
     100% {opacity: 1; pointer-events: auto;}
 }
