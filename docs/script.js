@@ -30,13 +30,16 @@
 //        }, 250);
 //    }
 //}, 20);
-window.onload = function() {
-    bubbleSound.play()
-}
+
 
 const fireSound = new Audio("images/fire.mp3");
-const bubbleSound = new Audio("images/bubbles.mp3");
+const waveSound = new Audio("images/waves.mp3");
 
+window.onload = function() {
+    waveSound.play()
+}
+
+//boing
 var jumping = false;
 const boingSound = new Audio("images/boing.mp3");
 function jump() {
@@ -53,8 +56,9 @@ function jump() {
     }
 }
 
+//freaks out the popup a little bit. as a treat
 const errorSound = new Audio("images/error.mp3");
-var delay = 30;
+var delay = 90;
 function freakout() {
     popup = document.getElementById("popup");
     const randomDegree = Math.floor(Math.random() * 20);
@@ -78,6 +82,7 @@ function freakout() {
     setTimeout(() => {popup.style.filter = "hue-rotate(0deg) blur(0px)"}, 250);
 }
 
+//plays fire sound on click if not jumping on trampoline or clicking away popup
 document.addEventListener('click', () => {
     if (errorSound.paused && boingSound.paused)
     {
@@ -86,6 +91,7 @@ document.addEventListener('click', () => {
     }
 });
 
+//top chatty wrote this for me :3
 let player;
 let isReady = false;
 
