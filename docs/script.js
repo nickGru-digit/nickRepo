@@ -136,7 +136,7 @@ const prompts =[ "In the projects tab, you can click on some of the images and l
                 "Did you know? Hitting 'Alt+F4' will unlock Super Special Mode? Try it!",
                 "If the popups annoy you, you should try, 'Stop complaining!'",
                 "Try dancing like the skeletons in the background! It will make you happier!",
-                "f3h$%$FDd vDFDd$#ES dF%$4G dT $ fHffgFGFGfdfdwawpawp!",
+                "f3h$%$FDd vDFDd$#ES dF%$4G dT $ fHffgFGFGfdfdwawpawp! FdFdFD WEQWQI402 @$@34$7 gfBfDF Ssd#.... sdF/ S$ $ @ $%%%%",
                 "YIP!",
                 "Would you like help with something?",
                 "I see your printer needs reconfigured. I've just done it for you!",
@@ -146,7 +146,12 @@ const prompts =[ "In the projects tab, you can click on some of the images and l
                 "Hello people over the age of 21, would you like an alcoholic beverage? It's on the house!",
                 "We will find you. We will get you. We will never stop looking.",
                 "I wanna gleeb your glorb...",
-                "What is your name? And your email? Mother's maiden name? Oh, and the street you grew up on. Please, I need it for my school project."];
+                "What is your name? And your email? Mother's maiden name? Oh, and the street you grew up on. Please, I need it for my school project.",
+                "To improve accuracy, we prevent Clippy from responding to categories of questions when there is a low level of confidence in the response. If your question is classified to be in one of those categories, then the question is blocked.",
+                "...",
+                ".. / .-.. --- ...- . / -.-- --- ..- .-.-.- / -- .- -.- . / --- ..- - / .-- .. - .... / -- . .-.-.-"
+                ];
+                
 let asking = false;
 function askQuestion() {
     if(asking === false)
