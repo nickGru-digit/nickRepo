@@ -185,6 +185,10 @@ div.center {
     background-image: url("images/clippyflirt.gif");
 }
 
+.clippy.eyebrows {
+    background-image: url("images/clippyeyebrow.gif");
+}
+
 .speech {
     background-color: rgb(255, 255, 178);
     background-position: center;

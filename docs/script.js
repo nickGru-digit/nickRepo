@@ -121,7 +121,7 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-const poses =["pointing", "thinking", "waving", "flirting"];
+const poses =["pointing", "thinking", "waving", "flirting", "eyebrows"];
 const prompts =[ "In the projects tab, you can click on some of the images and links to learn more! Sometimes you can even play with the models!",
                 "You should try bouncing on the whimsical trampoline! How high can you go?",
                 "You look great today. Did you get a haircut?",
