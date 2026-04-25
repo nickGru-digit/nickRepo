@@ -37,12 +37,18 @@
             <h4>Angels Fall First (1997), Oceanborn (1998), Wishmaster (2000), Century Child (2002),
                 Once (2004)</h4>
             <div class="rowbox">
-                <img class="corpus" src="images/earlyvoyant.png"
-                    alt="A wordcloud created by Voyant for Nightwish's first 5 albums" />
-                <img class="corpus" src="images/earlyant.png"
-                    alt="The first 10 results of an n-gram size 3 in AntConc for Nightwish's first 5 albums" />
-                <img class="corpus" src="images/earlygraph.png"
-                    alt="A graph created by Voyant for Nightwish's first 5 albums" />
+                <figure class="corpus">
+                    <img src="images/earlyvoyant.png"/>
+                    <figcaption>A wordcloud created by Voyant for Nightwish's first 5 albums</figcaption>
+                </figure>
+                <figure class="corpus">
+                    <img src="images/earlyant.png"/>
+                    <figcaption>The first 10 results of an n-gram size 3 in AntConc for Nightwish's first 5 albums</figcaption>
+                </figure>
+                <figure class="corpus">
+                    <img src="images/earlygraph.png"/>
+                    <figcaption>A graph created by Voyant for Nightwish's first 5 albums</figcaption>
+                </figure>
             </div>
             <p>The worldcloud shows "oh," which is used often, but that is skewed by one song that
                 features the word 140 times. Besides that, many emotion-filled and visually
@@ -55,12 +61,18 @@
             <h4>Dark Passion Play (2007), Imaginaerum (2011), Endless Forms Most Beautiful (2015),
                 Human. :II: Nature. (2020), Yesterwynde (2024)</h4>
             <div class="rowbox">
-                <img class="corpus" src="images/newvoyant.png"
-                    alt="A wordcloud created by Voyant for Nightwish's most recent 5 albums" />
-                <img class="corpus" src="images/newant.png"
-                    alt="The first 10 results of an n-gram size 3 in AntConc for Nightwish's most recent 5 albums" />
-                <img class="corpus" src="images/newgraph.png"
-                    alt="A graph created by Voyant for Nightwish's most recent 5 albums" />
+                <figure class="corpus">
+                    <img src="images/newvoyant.png"/>
+                    <figcaption>A wordcloud created by Voyant for Nightwish's most recent 5 albums</figcaption>
+                </figure>
+                <figure class="corpus">
+                    <img src="images/newant.png"/>
+                    <figcaption>The first 10 results of an n-gram size 3 in AntConc for Nightwish's most recent 5 albums</figcaption>
+                </figure>
+                <figure class="corpus">
+                    <img src="images/newgraph.png"/>
+                    <figcaption>A graph created by Voyant for Nightwish's most recent 5 albums</figcaption>
+                </figure>
             </div>
         </section>
         <section class="box">
@@ -123,9 +135,12 @@
                 Yesterwynde (2024). Both songs have a long bridge with the same repeated lyrics.</p>
         </section>
         <div>
+            <div id="clippy" class="clippy" onclick="askQuestion()"></div>
+            <div id="speech-container" class="speech">
+                <p id="speech-text">Have you tried shutting the hell up?</p>
+            </div>
             <div id="popup" onclick="freakout()"></div>
             <div class="loading"></div>
-            <div class="bubbles"></div>
             <div class="loadBar"></div>
             <div class="scan-bar">
                 <div class="scan"></div>
@@ -133,6 +148,7 @@
             <div class="screen"></div>
             <div class="bezel"></div>
             <div class="glow"></div>
+            <div id="player"></div>
             <div class="cursor" id="main"></div>
         </div>
         <footer>
@@ -140,6 +156,6 @@
                 <p>© 2025 Nicky G, Shmorple Inc.</p>
             </div>
         </footer>
-        <script src ="script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>

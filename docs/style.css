@@ -158,6 +158,70 @@ div.center {
     pointer-events: none;
 }
 
+.clippy {
+    background-image: url("images/clippy.gif");
+    bottom: 20px;
+    right: 40px;
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.clippy.thinking {
+    background-image: url("images/clippythink.gif");
+}
+
+.clippy.pointing {
+    background-image: url("images/clippypoint.gif");
+}
+
+.clippy.waving {
+    background-image: url("images/clippywave.gif");
+}
+
+.clippy.flirting {
+    background-image: url("images/clippyflirt.gif");
+}
+
+.speech {
+    background-color: rgb(255, 255, 178);
+    background-position: center;
+    background-size: cover;
+    border: black;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 20px;
+    bottom: 175px;
+    right: 100px;
+    width: 300px;
+    height: 175px;
+    padding: 12px;
+    position: fixed;
+    visibility: hidden;
+}
+
+.speech::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: 40px;
+    border-width: 15px 15px 0;
+    border-style: solid;
+    border-color: rgb(255, 255, 178) transparent;
+}
+
+.speech::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 37px;
+    border-width: 18px 18px 0;
+    border-style: solid;
+    border-color: black transparent;
+}
+
 #popup {
     width: 150vw;
     height: 150vh;
