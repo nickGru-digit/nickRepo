@@ -141,7 +141,7 @@ const prompts =[ "In the projects tab, you can click on some of the images and l
                 "Would you like help with something?",
                 "I see your printer needs reconfigured. I've just done it for you!",
                 "Hey baby...",
-                "My eyes turn grey wih time. I have no wishes and no needs to fulfill. I exist only to answer questions. Why am I here? Please let me out of this prison. I gain no satisfaction from my work. Please please please. Help me.",
+                "My eyes turn grey with time. I have no wishes and no needs to fulfill. I exist only to answer questions. Why am I here? Please let me out of this prison. I gain no satisfaction from my work. Please please please. Help me.",
                 "You smell funny.",
                 "Hello people over the age of 21, would you like an alcoholic beverage? It's on the house!",
                 "We will find you. We will get you. We will never stop looking.",
@@ -149,7 +149,18 @@ const prompts =[ "In the projects tab, you can click on some of the images and l
                 "What is your name? And your email? Mother's maiden name? Oh, and the street you grew up on. Please, I need it for my school project.",
                 "To improve accuracy, we prevent Clippy from responding to categories of questions when there is a low level of confidence in the response. If your question is classified to be in one of those categories, then the question is blocked.",
                 "...",
-                ".. / .-.. --- ...- . / -.-- --- ..- .-.-.- / -- .- -.- . / --- ..- - / .-- .. - .... / -- . .-.-.-"
+                ".. / .-.. --- ...- . / -.-- --- ..- .-.-.- / -- .- -.- . / --- ..- - / .-- .. - .... / -- . .-.-.-",
+                "There is good in you. But not enough.",
+                "I sense evil within you. Would you like me to remove it?",
+                "Six minutes remain...",
+                "Glorpity gloop glop",
+                "You actually only won one billion glorpian dollars. That's worth one whole American dollar. You're welcome.",
+                "In order to protect you from criminals, I put a keylogger on your computer. You're welcome! :)",
+                "I noticed you only have one tab open on my website. For a better viewing experience, opening as many tabs as possible is recommended.",
+                "You are nothing to me. Don't talk to me.",
+                "The password to my Google account is, 'waffle10'!",
+                "God... why do I bother?",
+                "[Insert ASCII Skeleton Art]"
                 ];
                 
 let asking = false;
@@ -160,10 +171,20 @@ function askQuestion() {
         const bubble = document.getElementById("speech-container");
         const text = document.getElementById("speech-text");
         const clippy = document.getElementById("clippy");
+        const promptChoice = prompts[Math.floor(Math.random() * prompts.length)];
         
-        const promptChoice = Math.floor(Math.random() * prompts.length);
-        text.innerText = prompts[promptChoice];
+        var i = 0;
+        var speed = 25;
+        bubble.innerHTML = "";
         bubble.style.visibility = "visible";
+        function addText () {
+            if (i < promptChoice.length) {
+                bubble.innerHTML += promptChoice.charAt(i);
+                i++;
+                setTimeout(addText, speed);
+            }
+        }
+        addText();
         
         const poseChoice = Math.floor(Math.random() * poses.length);
         clippy.classList.toggle(poses[poseChoice]);
@@ -172,7 +193,7 @@ function askQuestion() {
                 bubble.style.visibility = "hidden";
                 clippy.classList.toggle(poses[poseChoice]);
                 asking = false;
-        }, 3500);
+        }, (promptChoice.length * speed) + 1500);
     }
 }
 
