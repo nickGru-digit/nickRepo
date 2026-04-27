@@ -34,6 +34,9 @@
 
 const fireSound = new Audio("images/fire.mp3");
 const waveSound = new Audio("images/waves.mp3");
+const boingSound = new Audio("images/boing.mp3");
+const errorSound = new Audio("images/error.mp3");
+const typingSound = new Audio("images/typing.mp3");
 
 window.onload = function () {
     waveSound.play()
@@ -41,7 +44,6 @@ window.onload = function () {
 
 //boing
 var jumping = false;
-const boingSound = new Audio("images/boing.mp3");
 function jump() {
     trampoline = document.getElementById("jumping");
     trampoline.style.transition = "transform 1.25s ease";
@@ -65,7 +67,6 @@ function jump() {
 }
 
 //freaks out the popup a little bit. as a treat
-const errorSound = new Audio("images/error.mp3");
 var delay = 90;
 function freakout() {
     popup = document.getElementById("popup");
@@ -96,15 +97,6 @@ function freakout() {
     250);
 }
 
-//plays fire sound on click if not jumping on trampoline or clicking away popup
-document.addEventListener('click', () => {
-    if (errorSound.paused && boingSound.paused) {
-        fireSound.currentTime = 0;
-        fireSound.play();
-    }
-});
-
-//top chatty wrote this for me :3
 let player;
 let isReady = false;
 
@@ -127,17 +119,17 @@ const prompts =[ "In the projects tab, you can click on some of the images and l
                 "You look great today. Did you get a haircut?",
                 "The joy tab was actually the first one I finished! This is because its useless.",
                 "If you haven't noticed by now, this portfolio isn't actually very professional.",
-                "To suggest new features for this website, please close the tab!",
+                "To suggest new features for this website, please close the tab and go outside.",
                 "Why are you talking to me?",
                 "I've never been super interested in pickleball.",
                 "Most of the pictures in the gallery are cute! Some of them are of my boyfriend.",
                 "Reading my resume will show you how little experience I actually have. I'm forever destined to work a dead-end low-paying job in a warehouse somewhere! Woohoo!",
                 "I'm so tired.",
-                "Did you know? Hitting 'Alt+F4' will unlock Super Special Mode? Try it!",
+                "Did you know? Hitting 'Alt+F4' will unlock Super Special Mode. Try it!",
                 "If the popups annoy you, you should try, 'Stop complaining!'",
                 "Try dancing like the skeletons in the background! It will make you happier!",
                 "f3h$%$FDd vDFDd$#ES dF%$4G dT $ fHffgFGFGfdfdwawpawp! FdFdFD WEQWQI402 @$@34$7 gfBfDF Ssd#.... sdF/ S$ $ @ $%%%%",
-                "YIP!",
+                "YIP! 👽",
                 "Would you like help with something?",
                 "I see your printer needs reconfigured. I've just done it for you!",
                 "Hey baby...",
@@ -147,7 +139,7 @@ const prompts =[ "In the projects tab, you can click on some of the images and l
                 "We will find you. We will get you. We will never stop looking.",
                 "I wanna gleeb your glorb...",
                 "What is your name? And your email? Mother's maiden name? Oh, and the street you grew up on. Please, I need it for my school project.",
-                "To improve accuracy, we prevent Clippy from responding to categories of questions when there is a low level of confidence in the response. If your question is classified to be in one of those categories, then the question is blocked.",
+                "✨ To improve accuracy, we prevent Clippy from responding to categories of questions when there is a low level of confidence in the response. If your question is classified to be in one of those categories, then the question is blocked.",
                 "...",
                 ".. / .-.. --- ...- . / -.-- --- ..- .-.-.- / -- .- -.- . / --- ..- - / .-- .. - .... / -- . .-.-.-",
                 "There is good in you. But not enough.",
@@ -157,10 +149,17 @@ const prompts =[ "In the projects tab, you can click on some of the images and l
                 "You actually only won one billion glorpian dollars. That's worth one whole American dollar. You're welcome.",
                 "In order to protect you from criminals, I put a keylogger on your computer. You're welcome! :)",
                 "I noticed you only have one tab open on my website. For a better viewing experience, opening as many tabs as possible is recommended.",
-                "You are nothing to me. Don't talk to me.",
+                "You are nothing. Don't talk to me.",
                 "The password to my Google account is, 'waffle10'!",
                 "God... why do I bother?",
-                "[Insert ASCII Skeleton Art]"
+                "[Insert ASCII Skeleton Art]",
+                "It is decidedly so.",
+                "Outlook not so good.",
+                "⭐⭐⭐⭐⭐ No notes.",
+                "I see you're not currently working on your assignments. Please leave this site, and open Canvas.",
+                "AAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAaAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAA AAAAAAAAA",
+                "Keep pushing me, see what happens.",
+                "*maow*"
                 ];
                 
 let asking = false;
@@ -174,7 +173,7 @@ function askQuestion() {
         const promptChoice = prompts[Math.floor(Math.random() * prompts.length)];
         
         var i = 0;
-        var speed = 25;
+        var speed = 60;
         bubble.innerHTML = "";
         bubble.style.visibility = "visible";
         function addText () {
@@ -189,6 +188,12 @@ function askQuestion() {
         const poseChoice = Math.floor(Math.random() * poses.length);
         clippy.classList.toggle(poses[poseChoice]);
         
+        typingSound.play();
+        typingSound.loop = true;
+        setTimeout(() => {
+            typingSound.pause();
+        }, (promptChoice.length * speed) + 500);
+        
         setTimeout(() => {
                 bubble.style.visibility = "hidden";
                 clippy.classList.toggle(poses[poseChoice]);
@@ -196,6 +201,14 @@ function askQuestion() {
         }, (promptChoice.length * speed) + 1500);
     }
 }
+
+//plays fire sound on click if not playing other sounds
+document.addEventListener('click', () => {
+    if (errorSound.paused && boingSound.paused) {
+        fireSound.currentTime = 0;
+        fireSound.play();
+    }
+});
 
 function getVideoId(url) {
     const match = url.match(/(?:v=|youtu\.be\/)([^&]+)/);
