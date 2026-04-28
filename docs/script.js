@@ -100,19 +100,6 @@ function freakout() {
 let player;
 let isReady = false;
 
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '1',
-        width: '1',
-        videoId: '',
-        events: {
-            'onReady': () => {
-                isReady = true;
-            }
-        }
-    });
-}
-
 const poses =["pointing", "thinking", "waving", "flirting", "eyebrows"];
 const prompts =[ "In the projects tab, you can click on some of the images and links to learn more! Sometimes you can even play with the models!",
                 "You should try bouncing on the whimsical trampoline! How high can you go?",
@@ -204,11 +191,24 @@ function askQuestion() {
 
 //plays fire sound on click if not playing other sounds
 document.addEventListener('click', () => {
-    if (errorSound.paused && boingSound.paused) {
+    if (errorSound.paused && boingSound.paused && typingSound.paused) {
         fireSound.currentTime = 0;
         fireSound.play();
     }
 });
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '1',
+        width: '1',
+        videoId: '',
+        events: {
+            'onReady': () => {
+                isReady = true;
+            }
+        }
+    });
+}
 
 function getVideoId(url) {
     const match = url.match(/(?:v=|youtu\.be\/)([^&]+)/);
