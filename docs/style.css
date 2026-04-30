@@ -373,7 +373,7 @@ figcaption {
 }
 
 iframe.video {
-    width: calc(60vw - 16px);
+    width: calc(60vw - 20px);
     border: rgb(51, 153, 255);
     border-width: 5px;
     border-style: dotted;
