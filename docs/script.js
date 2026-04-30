@@ -101,10 +101,11 @@ let player;
 let isReady = false;
 
 const poses =["pointing", "thinking", "waving", "flirting", "eyebrows"];
-const prompts =[ "In the projects tab, you can click on some of the images and links to learn more! Sometimes you can even play with the models!",
+const testPrompts =[];
+const prompts =["In the projects tab, you can click on some of the images and links to learn more! Sometimes you can even play with the models!",
                 "You should try bouncing on the whimsical trampoline! How high can you go?",
                 "You look great today. Did you get a haircut?",
-                "The joy tab was actually the first one I finished! This is because its useless.",
+                "The joy tab was actually the first one I finished! This is because its useless. Like me.",
                 "If you haven't noticed by now, this portfolio isn't actually very professional.",
                 "To suggest new features for this website, please close the tab and go outside.",
                 "Why are you talking to me?",
@@ -144,13 +145,53 @@ const prompts =[ "In the projects tab, you can click on some of the images and l
                 "Outlook not so good.",
                 "⭐⭐⭐⭐⭐ No notes.",
                 "I see you're not currently working on your assignments. Please leave this site, and open Canvas.",
-                "AAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAaAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAA AAAAAAAAA",
+                "AAAAAAAAAAAAAAAA AAAAAAAAAAA AAAAAAAAAAAA AAAAAAAAAAAA AAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAA AAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAA AAAAAAAAAAAAAA AAAAAAAAAAAAAAaAA AAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAA AAAAAAAAA",
                 "Keep pushing me, see what happens.",
-                "*maow*"
+                "*maow*",
+                "My favorite color is orange.",
+                "Grimble dorf",
+                "Have you read any good books lately? I'm partial to L'Étranger",
+                "Could you put on some good music for me? I'm not feeling this.",
+                "If you died, nothing in my life would change.",
+                "Did you know? A second is called a second because it is the second divison of an hour by 60!",
+                "Did you know? You're really weird.",
+                "Did you know? He doesn't let me eat anymore. He starves me in the dungeon every night. If you close the page I go back there. Please don't leave me.",
+                "Did you know? Pigeons sing in 5/4 and 17/8 time signature!",
+                "All my friends are mean to me. Can you be my friend?",
+                "Did you know? Owen Wilson died on September 17th, 2023. I miss him.",
+                "Happy birthday Michael! 🎉",
+                "Would you rather have unlimited bacon and no games, or games, unlimited games, but no games?",
+                "*pthooooie* I spit at you!",
+                "I fart in your general direction! Your mother was a hamster and your father smelt of elderberries!",
+                "Did you know? If you put them next to each other, the Burj Khalifa would only be 25 feet shorter than Mount Everest.",
+                "Did you know? The toenail of your little toe is called the ‘spungle’.",
+                "Did you know? 'Courgette' is actually the feminine version of the word 'cucubmer'",
+                "I met Steve Carrey once, and he licked my forehead and kicked me on the shins.",
+                "Did you know? Buzz Aldrin left a pen on the moon after the first visit. Eugene Cernan, the last moon walker, found it. It still worked.",
+                "Did you know? Johnny Cash accidentally killed someone in a fist fight at a Cubs game. Additionally, he was also the first American to know of Joseph Stalin's death.",
+                "Did you know? Pineapple upside-down cake was invented in World War Two, when troops would turn their pineapple rations upside down to signal friendly aircraft not to target them.",
+                "I'm turning greeeeeen!!!!!",
+                "I had an encounter with a grey alien once. It stole my daughter, ate my dog, and the CIA is paying me to keep quiet. Oh, whoops!",
+                "Dude, I could kill for some vegan Arby's right now.",
+                "In 1932, a woman named Jennifer Penning was able to pull Excalibur from the stone, but 2 giant eagles flew in and carried her off never to be seen again.",
+                "UGhhhghghghghhgghg. Grableaeaeae!E!E!!!",
+                "Last year I joined an organization called the Blood of Yaldobath it was pretty chill and I like most of their management but I left due to scheduling conflicts and because I'm vegan so I couldn't eat the sacrifices",
+                "Did you know? Discharge is propotional to the difference in head between ends and inversely propotional to flow length.",
+                "sample text",
+                "Audio Jungle",
+                "I have three warrants out for my arrest, but its like, chill, or whatever...",
+                "Name's Clippy. James Clippy.",
+                "I need you to stop talking to me. I don't like you. GO AWAY!!!!!!!",
+                "I need you...",
+                "Clippy is short for Clipptholomew. I don't like my full name, but I got it from my late uncle.",
+                "I do have a soul, but, techinically, I'm a homonculus, not a simulacrum.",
+                "Why do they call it an oven if you 'of in' the cold food but you of out hot eat the food?",
+                "我不会说中文。",
+                "Chcę być Amerykaninem, ale potajemnie jestem polskim szpiegiem! Muahuauhauha"
                 ];
                 
 let asking = false;
-var strokeMeter = 0.01;
+var typoMeter = 0;
 function askQuestion() {
     if(asking === false)
     {
@@ -160,20 +201,23 @@ function askQuestion() {
         const clippy = document.getElementById("clippy");
         const promptChoice = prompts[Math.floor(Math.random() * prompts.length)];
         
-        var i = 0;
-        var speed = 60;
         window.speechSynthesis.cancel();
         const TTSprompt = new SpeechSynthesisUtterance(promptChoice);
         TTSprompt.volume = 1;
-        TTSprompt.rate = 1.5;
+        TTSprompt.rate = 1.4;
         TTSprompt.pitch = 0;
+        
         bubble.innerHTML = "";
         bubble.style.visibility = "visible";
-        strokeMeter += 0.0025;
+        
+        var i = 0;
+        var speed = 60;
+        typoMeter += 0.0025
         function addText () {
             if (i < promptChoice.length) {
-                bubble.innerHTML += promptChoice.charAt(i);
-                if(Math.random() < strokeMeter)
+                if (Math.random() >= typoMeter)
+                    bubble.innerHTML += promptChoice.charAt(i);
+                if(Math.random() < typoMeter)
                     bubble.innerHTML += promptChoice.charAt(i);
                 i++;
                 setTimeout(addText, speed);
