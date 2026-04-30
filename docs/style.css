@@ -160,10 +160,12 @@ div.center {
 
 .clippy {
     background-image: url("images/clippy.gif");
-    bottom: 20px;
-    right: 40px;
-    width: 150px;
-    height: 150px;
+    bottom: 1vh;
+    right: 2vw;
+    min-width: 150px;
+    min-height: 150px;
+    width: 12vw;
+    height: 12vw;
     position: fixed;
     background-position: center;
     background-size: cover;
@@ -269,7 +271,7 @@ div.center {
 }
 .bezel {
     background-image: url("images/bezel.png");
-    background-size: cover;
+    background-size: 100% 100%;
 }
 .glow {
     position: fixed;
