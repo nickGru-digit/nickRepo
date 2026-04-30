@@ -150,6 +150,7 @@ const prompts =[ "In the projects tab, you can click on some of the images and l
                 ];
                 
 let asking = false;
+var strokeMeter = 0.01;
 function askQuestion() {
     if(asking === false)
     {
@@ -161,11 +162,19 @@ function askQuestion() {
         
         var i = 0;
         var speed = 60;
+        window.speechSynthesis.cancel();
+        const TTSprompt = new SpeechSynthesisUtterance(promptChoice);
+        TTSprompt.volume = 1;
+        TTSprompt.rate = 1.5;
+        TTSprompt.pitch = 0;
         bubble.innerHTML = "";
         bubble.style.visibility = "visible";
+        strokeMeter += 0.0025;
         function addText () {
             if (i < promptChoice.length) {
                 bubble.innerHTML += promptChoice.charAt(i);
+                if(Math.random() < strokeMeter)
+                    bubble.innerHTML += promptChoice.charAt(i);
                 i++;
                 setTimeout(addText, speed);
             }
@@ -173,8 +182,9 @@ function askQuestion() {
         addText();
         
         const poseChoice = Math.floor(Math.random() * poses.length);
-        clippy.classList.toggle(poses[poseChoice]);
+        clippy.classList.toggle(poses[poseChoice]);        
         
+        window.speechSynthesis.speak(TTSprompt);
         typingSound.play();
         typingSound.loop = true;
         setTimeout(() => {
@@ -184,8 +194,9 @@ function askQuestion() {
         setTimeout(() => {
                 bubble.style.visibility = "hidden";
                 clippy.classList.toggle(poses[poseChoice]);
+                window.speechSynthesis.cancel();
                 asking = false;
-        }, (promptChoice.length * speed) + 1500);
+        }, (promptChoice.length * speed) + 3000);
     }
 }
 
