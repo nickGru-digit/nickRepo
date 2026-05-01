@@ -187,7 +187,8 @@ const prompts =["In the projects tab, you can click on some of the images and li
                 "I do have a soul, but, techinically, I'm a homonculus, not a simulacrum.",
                 "Why do they call it an oven if you 'of in' the cold food but you of out hot eat the food?",
                 "我不会说中文。",
-                "Chcę być Amerykaninem, ale potajemnie jestem polskim szpiegiem! Muahuauhauha"
+                "Chcę być Amerykaninem, ale potajemnie jestem polskim szpiegiem! Muahuauhauha",
+                "HOW TO MAKE LINKS NOT LOOK PURPLE WHEN THEY BEEN CLICKED ON"
                 ];
                 
 let asking = false;
@@ -212,7 +213,7 @@ function askQuestion() {
         
         var i = 0;
         var speed = 60;
-        typoMeter += 0.0025
+        typoMeter += 0.001
         function addText () {
             if (i < promptChoice.length) {
                 if (Math.random() >= typoMeter)
@@ -251,6 +252,7 @@ document.addEventListener('click', () => {
         fireSound.play();
     }
 });
+
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {

@@ -8,143 +8,12 @@
         <link rel="icon" href="images/shark.jpg" type="image/jpg">
     </head>
     <body>
-        <div class="header">
-            <div class="bigText">
-                <img class="fire" src="images/fire.gif" alt="FIRE!!!!" />
-                <strong>Nick Grundman's Very Professional Portfolio</strong>
-                <img class="fire" src="images/fire.gif" alt="FIRE!!!!" />
-            </div>
-            <ul class="navbar">
-                <li>
-                    <a href="index.html">home</a>
-                </li>
-                <li>
-                    <a href="gallery.html">gallery</a>
-                </li>
-                <li>
-                    <a href="projects.html">projects</a>
-                </li>
-                <li>
-                    <a href="joy.html">joy</a>
-                </li>
-                <li>
-                    <a href="whimsy.html">whimsy</a>
-                </li>
-            </ul>
-        </div>
-        <section class="box">
-            <h2>About Me</h2>
-            <p>Welcome to my portfolio! My name is Nick and I'm a sophomore DIGIT Major at Penn
-                State Behrend. I am focusing on Human Factors and Data Visualization. On this
-                website, you can see my resume below, enjoy many of the photos I have taken over the
-                years in the gallery, see some of my school projects, and maybe experience some joy
-                and whimsy along the way.</p>
-            <p>Also, if you're interested, you can paste any YouTube link below and it (should) let
-                you play it as an audio track. Just once though, and only on this page. I'm not
-                doing anything too fancy. I just felt the dancing skeletons needed something to
-                dance to. Enjoy!</p>
-            <input type="text" id="ytInput" placeholder="Paste YouTube link">
-            <button id="playBtn">Load Song</button>
-            <button onclick="player.playVideo()">Start Audio</button>
-        </section>
-        <section class="box">
-            <h2>Resume</h2>
-            <h3>Education</h3>
-            <h4>The Pennsylvania State University, Erie, PA</h4>
-            <ul>
-                <li>Bachelor of Arts in Digital Media, Arts, and Technology</li>
-                <li>Academic Minors in Data Visualization, Management Information Systems, and
-                    Psychology</li>
-                <li>Certificate in Human Factors</li>
-            </ul>
-            <h4>North Allegheny Senior High School, Pittsburgh, PA</h4>
-            <ul>
-                <li>AP Computer Science (A)</li>
-                <li>AP Psychology (A)</li>
-            </ul>
-            <h4>La Roche University College in High School (CHS) Courses</h4>
-            <ul>
-                <li>POLI 3033, American Foreign Policy, 3 credits, B</li>
-                <li>PHIL 1021, Intro to Philosophy, 3 credits, A</li>
-                <li>MATH 1004, Statistics in Healthcare, 3 credits, A</li>
-            </ul>
-            <h4>Standarized Test Scores</h4>
-            <ul>
-                <li>SAT score of 1440 (98th percentile)</li>
-                <li>ACT score of 34 (99th percentile)</li>
-            </ul>
-            <h3>Employment</h3>
-            <h4>Personal shopper at Walmart, Erie PA (May 2025 to present)</h4>
-            <ul>
-                <li>Accurately selecting and picking hundreds of grocery and general merchandise
-                    items daily using the GIF app on Zebra TC-70X and TC-72 handhelds</li>
-                <li>Ensuring quality and freshness for all products, and managing efficient
-                    substitutions when items are unavailable </li>
-                <li>Preparing and staging orders for timely customer pickup, ensuring proper
-                    temperature control for frozen, chilled, and ambient items </li>
-                <li>Assisting customers and Spark delivery drivers during pickup, verifying orders,
-                    loading vehicles, and resolving minor order discrepancies promptly </li>
-            </ul>
-            <h4>Customer Service at Kuhn's Market, Pittsburgh PA (June 2024 to April 2025)</h4>
-            <ul>
-                <li>Supervising all front-end staff and handling technical issues and register
-                    malfunctions </li>
-                <li>Assisting customers with questions, refunds, exchanges, and complaints </li>
-                <li>Selling restricted specialty items (e.g., tobacco, alcohol, bus passes,
-                    particular theft-prone items) </li>
-                <li>Operating the PA lottery machine and doling out winnings up to $1000 </li>
-                <li>Handling thousands of dollars worth of cash transfer per day whilst ensuring a
-                    balanced drawer </li>
-                <li>Phone response and referral, including paging the managers of each department
-                    when needed </li>
-            </ul>
-            <h4>Cashier at Kuhn's Market, Pittsburgh PA (June 2023 to June 2024)</h4>
-            <ul>
-                <li> Serving customers in all means to ensure they are satisfied with their shopping
-                    experience </li>
-                <li>Operating an NCR POS with a card reader and cash register, memorizing large
-                    varieties of produce codes </li>
-                <li>Presiding over the NCR self-checkouts to prevent errors and theft from
-                    disrupting business </li>
-                <li>Filling and taking out curbside orders through the eGrowcery app, handling
-                    substitutions while picking </li>
-                <li>Performing various housekeeping tasks such as cleaning registers, zoning
-                    shelves, mopping floors, and returning carts </li>
-            </ul>
-            <h3>Technical Skills</h3>
-            <h4>Programming Languages</h4>
-            <ul>
-                <li>C++, Java, Python</li>
-            </ul>
-            <h4>Markup Languages</h4>
-            <ul>
-                <li>HTML, CSS, XML</li>
-            </ul>
-            <h4>Applications, IDES, Websites</h4>
-            <ul>
-                <li>Microsoft Visual Studio, Eclipse, Oxygen, Figma, Hypothe.is, Miro</li>
-            </ul>
-            <h4>Google Workspace Programs</h4>
-            <ul>
-                <li>Sheets, Docs, Slides, Meet, Gmail, Calendar, Sites</li>
-            </ul>
-            <h4>Microsoft Office Programs</h4>
-            <ul>
-                <li>Excel, Word, Powerpoint, Teams, Outlook</li>
-            </ul>
-            <h4>Artificial Intelligence Programs</h4>
-            <ul>
-                <li>ChatGPT, Google Gemini, DeepSeek, Copilot</li>
-            </ul>
-        </section>
+        <a href="about.html"><div class="splash">
+            <div class="bigText">Welcome To My Beautiful Splash Screen</div>
+            <div class="bigText">Click Anywhere To Continue</div>
+                <h1>I hope you enjoy</h1>
+        </div></a>
         <div>
-            <div id="clippy" class="clippy" onclick="askQuestion()"></div>
-            <div id="speech-container" class="speech">
-                <p id="speech-text">Have you tried shutting the hell up?</p>
-            </div>
-            <div id="popup" onclick="freakout()"></div>
-            <div class="loading"></div>
-            <div class="loadBar"></div>
             <div class="scan-bar">
                 <div class="scan"></div>
             </div>
@@ -156,7 +25,16 @@
         </div>
         <footer>
             <div class="footer">
-                <p>© 2025 Nicky G, Shmorple Inc.</p>
+                <a href="https://nickgru-digit.github.io/nickRepo/">Nick Grundman's Very Professional Portfolio </a>
+                © 2026 by is licensed under         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+                <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+                    alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""
+                    style="max-width: 1em;max-height:1em;margin-left: .2em;">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt=""
+                    style="max-width: 1em;max-height:1em;margin-left: .2em;">
+                <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt=""
+                    style="max-width: 1em;max-height:1em;margin-left: .2em;">
             </div>
         </footer>
         <script src="https://www.youtube.com/iframe_api"></script>
