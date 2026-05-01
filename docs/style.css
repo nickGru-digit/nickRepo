@@ -47,15 +47,13 @@ div.header {
     text-align: center;
 }
 
-div.footer {
+footer {
     background: rgb(100, 175, 200, 0.8);
     border: rgb(85, 135, 160);
     border-width: 5px;
     border-style: dashed;
     padding-left: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    text-align: center;
 }
 
 ul.navbar {
