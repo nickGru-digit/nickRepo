@@ -151,6 +151,21 @@ div.center {
 } 
 */
 
+button {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: -1px -1px 0 DarkRed,
+                1px -1px 0 LightCyan,
+                -1px 1px 0 LightCyan,
+                1px 1px 0 LightCyan,
+                -1.5px 0px 0 LightCyan,
+                1.5px 0px 0 LightCyan,
+                0px -1.5px 0 LightCyan,
+                0px 1.5px 0 LightCyan;
+    color: rgb(0, 50, 100);
+}
+
 .loading, .screen, .bezel, .glow, .scan-bar, .splash {
     top: 0;
     left: 0;

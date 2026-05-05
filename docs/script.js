@@ -37,6 +37,8 @@ const waveSound = new Audio("images/waves.mp3");
 const boingSound = new Audio("images/boing.mp3");
 const errorSound = new Audio("images/error.mp3");
 const typingSound = new Audio("images/typing.mp3");
+const goatMusic = new Audio("images/goatmusic.mp3");
+const makingCheese = new Audio("images/makingcheese.mp3");
 
 window.onload = function () {
     waveSound.play()
@@ -64,6 +66,14 @@ function jump() {
         },
         2500);
     }
+}
+
+function playGoats() {
+    goatMusic.play();
+}
+
+function playCheese() {
+    makingCheese.play();
 }
 
 //freaks out the popup a little bit. as a treat
@@ -165,7 +175,7 @@ const prompts =["In the projects tab, you can click on some of the images and li
                 "I fart in your general direction! Your mother was a hamster and your father smelt of elderberries!",
                 "Did you know? If you put them next to each other, the Burj Khalifa would only be 25 feet shorter than Mount Everest.",
                 "Did you know? The toenail of your little toe is called the ‘spungle’.",
-                "Did you know? 'Courgette' is actually the feminine version of the word 'cucubmer'",
+                "Did you know? 'Courgette' is actually the feminine version of the word 'cucumber'",
                 "I met Steve Carrey once, and he licked my forehead and kicked me on the shins.",
                 "Did you know? Buzz Aldrin left a pen on the moon after the first visit. Eugene Cernan, the last moon walker, found it. It still worked.",
                 "Did you know? Johnny Cash accidentally killed someone in a fist fight at a Cubs game. Additionally, he was also the first American to know of Joseph Stalin's death.",
@@ -176,7 +186,7 @@ const prompts =["In the projects tab, you can click on some of the images and li
                 "In 1932, a woman named Jennifer Penning was able to pull Excalibur from the stone, but 2 giant eagles flew in and carried her off never to be seen again.",
                 "UGhhhghghghghhgghg. Grableaeaeae!E!E!!!",
                 "Last year I joined an organization called the Blood of Yaldobath it was pretty chill and I like most of their management but I left due to scheduling conflicts and because I'm vegan so I couldn't eat the sacrifices",
-                "Did you know? Discharge is propotional to the difference in head between ends and inversely propotional to flow length.",
+                "Did you know? Discharge is proportional to the difference in head between ends and inversely proportional to flow length.",
                 "sample text",
                 "Audio Jungle",
                 "I have three warrants out for my arrest, but its like, chill, or whatever...",
@@ -247,7 +257,7 @@ function askQuestion() {
 
 //plays fire sound on click if not playing other sounds
 document.addEventListener('click', () => {
-    if (errorSound.paused && boingSound.paused && typingSound.paused) {
+    if (errorSound.paused && boingSound.paused && typingSound.paused && goatMusic.paused && makingCheese.paused) {
         fireSound.currentTime = 0;
         fireSound.play();
     }
