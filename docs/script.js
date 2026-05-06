@@ -39,6 +39,7 @@ const errorSound = new Audio("images/error.mp3");
 const typingSound = new Audio("images/typing.mp3");
 const goatMusic = new Audio("images/goatmusic.mp3");
 const makingCheese = new Audio("images/makingcheese.mp3");
+const crowMusic = new Audio("images/crowmusic.mp3");
 
 window.onload = function () {
     waveSound.play()
@@ -74,6 +75,10 @@ function playGoats() {
 
 function playCheese() {
     makingCheese.play();
+}
+
+function playCrows() {
+    crowMusic.play();
 }
 
 //freaks out the popup a little bit. as a treat
@@ -257,7 +262,7 @@ function askQuestion() {
 
 //plays fire sound on click if not playing other sounds
 document.addEventListener('click', () => {
-    if (errorSound.paused && boingSound.paused && typingSound.paused && goatMusic.paused && makingCheese.paused) {
+    if (errorSound.paused && boingSound.paused && typingSound.paused && goatMusic.paused && makingCheese.paused && crowMusic.paused) {
         fireSound.currentTime = 0;
         fireSound.play();
     }

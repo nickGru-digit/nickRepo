@@ -124,7 +124,7 @@ section.box {
 .rowbox {
     background: url("images/sparkle.gif");
     width: 100%;
-    margin: 0.5% auto;
+    gap: 1%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -357,7 +357,7 @@ img {
 }
 
 figure.corpus {
-    width: 30%;
+    flex: 1 1 30%;
     margin: 0;
     margin-bottom: 40px;
     box-shadow: 0 5px 5px black;
@@ -375,7 +375,7 @@ figure.corpus figcaption {
 }
 
 figure.corpus:hover {
-    transform: scale(1.8);
+    transform: scale(1.5);
     transition: 0.2s linear;
     box-shadow: 0 5px 20px black;
 }
